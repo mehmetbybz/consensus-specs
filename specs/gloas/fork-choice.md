@@ -45,6 +45,7 @@
   - [Modified `get_aggregate_due_ms`](#modified-get_aggregate_due_ms)
   - [Modified `get_sync_message_due_ms`](#modified-get_sync_message_due_ms)
   - [Modified `get_contribution_due_ms`](#modified-get_contribution_due_ms)
+  - [New `get_payload_due_ms`](#new-get_payload_due_ms)
   - [New `get_payload_attestation_due_ms`](#new-get_payload_attestation_due_ms)
   - [New `verify_execution_payload_envelope_signature`](#new-verify_execution_payload_envelope_signature)
   - [New `verify_execution_payload_envelope`](#new-verify_execution_payload_envelope)
@@ -779,6 +780,13 @@ def get_sync_message_due_ms() -> uint64:
 def get_contribution_due_ms() -> uint64:
     # [Modified in Gloas]
     return get_slot_component_duration_ms(CONTRIBUTION_DUE_BPS_GLOAS)
+```
+
+### New `get_payload_due_ms`
+
+```python
+def get_payload_due_ms() -> uint64:
+    return get_slot_component_duration_ms(PAYLOAD_DUE_BPS)
 ```
 
 ### New `get_payload_attestation_due_ms`
